@@ -8,19 +8,16 @@
 #     return 'Hello World!'
 
 from flask import Flask
-from datetime import datetime
+from flask import request
+
 app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
+#    if request.environ['HTTP_ORIGIN'] is not None:
+#        origin = request.environ['HTTP_ORIGIN']
 
-    return """
-    <h1>Hello heroku</h1>
-    <p>It is currently {time}.</p>
-
-    <img src="http://loremflickr.com/600/400">
-    """.format(time=the_time)
+    return request.environ
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
