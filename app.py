@@ -21,7 +21,8 @@ def homepage():
         'method' : request.method,
         'origin' : origin,
         'language' : language,
-        'host' : host
+        'host' : host,
+        'endpoint' : request.endpoint
     })
 
 if __name__ == '__main__':
