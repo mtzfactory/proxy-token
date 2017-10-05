@@ -17,18 +17,19 @@ def homepage():
     if request.headers.get('Host'):
         language = request.headers['Host']
 
-    return jsonify({ 
-        'method' : request.method,
+    return jsonify({
         'origin' : origin,
         'language' : language,
         'host' : host,
+        'method' : request.method,
         'endpoint' : request.endpoint,
         'cookies' : request.cookies,
         # 'data' : request.data,
         'args' : request.args,
         'remote_addr' : request.remote_addr,
         'form' : request.form,
-        'headers' : dict(request.headers)
+        'headers' : dict(request.headers),
+        'url': request.url
     })
 
 if __name__ == '__main__':
