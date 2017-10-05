@@ -34,8 +34,7 @@ def homepage():
     #     'environ': dict(request.environ),
     #     # 'query_string' : request.query_string
     # })
-    #return jsonify(dict(request))
-    return "fsadf"
+    return jsonify(dict(request))
 
 if __name__ == '__main__':
     app.run(debug = True, use_reloader = True)
