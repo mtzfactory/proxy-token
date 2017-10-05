@@ -4,9 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    headers = request.headers
-    #.get('HTTP_ORIGIN', '').lower()
-
     return { "method" : request.method, "headers" : "hola" } 
 
 if __name__ == '__main__':
