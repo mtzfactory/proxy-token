@@ -31,7 +31,7 @@ def homepage():
         'headers' : dict(request.headers),
         'url': request.url,
         'path' : request.path,
-        'query_string' : request.query_string
+        # 'query_string' : request.query_string
     })
 
 if __name__ == '__main__':
