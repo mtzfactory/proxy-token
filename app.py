@@ -8,6 +8,7 @@ def homepage():
     language = 'no-set'
     host = 'no-set'
     remote = 'no-set'
+    server = 'no-set'
 
     if request.headers.get('Origin'):
         origin = request.headers['Origin']
@@ -20,6 +21,9 @@ def homepage():
 
     if request.environ.get('REMOTE_ADDR'):
         remote = request.environ['REMOTE_ADDR']
+
+    if request.environ.get('SERVER_ADDR'):
+        server = request.environ['SERVER_ADDR']
 
     return jsonify({
         'origin' : origin,
@@ -36,6 +40,7 @@ def homepage():
         'url': request.url,
         'path' : request.path,
         'remote' : remote,
+        'server' : server,
         # 'environ': dict(request.environ),
         # 'query_string' : request.query_string
     })
