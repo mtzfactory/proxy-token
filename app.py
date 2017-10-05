@@ -31,7 +31,7 @@ def homepage():
         'headers' : dict(request.headers),
         'url': request.url,
         'path' : request.path,
-        'environ': dict(request.environ),
+        # 'environ': dict(request.environ),
         # 'query_string' : request.query_string
     })
 
