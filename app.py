@@ -15,8 +15,9 @@ app = Flask(__name__)
 def homepage():
 #    if request.environ['HTTP_ORIGIN'] is not None:
 #        origin = request.environ['HTTP_ORIGIN']
+    origin = request.headers.get('HTTP_ORIGIN', '').lower()
 
-    return request.method
+    return { "method" : request.method, "origin" : origin } 
 
 if __name__ == '__main__':
     app.run(debug = True, use_reloader = True)
