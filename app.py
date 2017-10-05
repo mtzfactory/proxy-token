@@ -22,7 +22,11 @@ def homepage():
         'origin' : origin,
         'language' : language,
         'host' : host,
-        'endpoint' : request.endpoint
+        'endpoint' : request.endpoint,
+        'cookies' : request.cookies,
+        'data' : request.data,
+        'args' : request.args,
+        'remote_addr' : request.remote_addr
     })
 
 if __name__ == '__main__':
