@@ -10,7 +10,7 @@ def homepage():
     if request.headers.get("Origin"):
         origin = request.headers["Origin"]
 
-    if request.headers.get["Accept-Language"]:
+    if request.headers.get("Accept-Language"):
         language = request.headers["Accept-Language"]
 
     return jsonify({ "method" : request.method, "origin" : origin, "language" : language })
