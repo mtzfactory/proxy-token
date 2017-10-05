@@ -5,7 +5,9 @@ app = Flask(__name__)
 @app.route('/')
 def homepage():
     origin = 'no-set'
-    origin = request.headers.get("Origin")
+    if request.headers.get("Origin"):
+        origin = request.headers['Origin']
+
     return jsonify({ "method" : request.method, "origin" : origin })
 
 if __name__ == '__main__':
