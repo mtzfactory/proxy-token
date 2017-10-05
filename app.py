@@ -29,7 +29,8 @@ def homepage():
         'remote_addr' : request.remote_addr,
         'form' : request.form,
         'headers' : dict(request.headers),
-        'url': request.url
+        'url': request.url,
+        'path' : request.path
     })
 
 if __name__ == '__main__':
