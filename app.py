@@ -7,7 +7,7 @@ def homepage():
     headers = request.headers
     #.get('HTTP_ORIGIN', '').lower()
 
-    return { "method" : request.method, "headers" : jsonify(headers) } 
+    return { "method" : request.method, "headers" : "hola" } 
 
 if __name__ == '__main__':
     app.run(debug = True, use_reloader = True)
