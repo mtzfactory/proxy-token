@@ -26,7 +26,8 @@ def homepage():
         'cookies' : request.cookies,
         # 'data' : request.data,
         'args' : request.args,
-        'remote_addr' : request.remote_addr
+        'remote_addr' : request.remote_addr,
+        'form' : request.form
     })
 
 if __name__ == '__main__':
