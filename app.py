@@ -1,10 +1,10 @@
-from flask import Flask, jsonify, request
+from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    return { "method" : request.method, "headers" : "hola" } 
+    return { "method" : request.method } 
 
 if __name__ == '__main__':
     app.run(debug = True, use_reloader = True)
