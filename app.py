@@ -22,8 +22,8 @@ def homepage():
         'origin' : origin,
         'language' : language,
         'host' : host,
-        'endpoint' : request.endpoint
-        # 'cookies' : request.cookies,
+        'endpoint' : request.endpoint,
+        'cookies' : request.cookies,
         # 'data' : request.data,
         # 'args' : request.args,
         # 'remote_addr' : request.remote_addr
