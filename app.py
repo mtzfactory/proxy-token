@@ -14,7 +14,15 @@ def homepage():
     if request.headers.get('Accept-Language'):
         language = request.headers['Accept-Language']
 
-    return jsonify({ 'method' : request.method, 'origin' : origin, 'language' : language })
+    if request.headers.get('Host'):
+        language = request.headers['Host']
+
+    return jsonify({ 
+        'method' : request.method,
+        'origin' : origin,
+        'language' : language,
+        'host' : host
+    })
 
 if __name__ == '__main__':
     app.run(debug = True, use_reloader = True)
