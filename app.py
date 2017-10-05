@@ -24,7 +24,7 @@ def homepage():
         'host' : host,
         'endpoint' : request.endpoint,
         'cookies' : request.cookies,
-        # 'data' : request.data,
+        'data' : request.data,
         # 'args' : request.args,
         # 'remote_addr' : request.remote_addr
     })
