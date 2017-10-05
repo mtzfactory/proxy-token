@@ -30,7 +30,8 @@ def homepage():
         'form' : request.form,
         'headers' : dict(request.headers),
         'url': request.url,
-        'path' : request.path
+        'path' : request.path,
+        'query_string' : request.query_string
     })
 
 if __name__ == '__main__':
