@@ -31,8 +31,12 @@ def homepage():
         'headers' : dict(request.headers),
         'url': request.url,
         'path' : request.path,
+        'environ': dict(request.environ),
         # 'query_string' : request.query_string
     })
 
 if __name__ == '__main__':
     app.run(debug = True, use_reloader = True)
+
+# http://flask.pocoo.org/docs/0.12/api/#incoming-request-data
+# http://flask.pocoo.org/docs/0.12/quickstart/#accessing-request-data
