@@ -17,24 +17,23 @@ def homepage():
     if request.headers.get('Host'):
         language = request.headers['Host']
 
-    # return jsonify({
-    #     'origin' : origin,
-    #     'language' : language,
-    #     'host' : host,
-    #     'method' : request.method,
-    #     'endpoint' : request.endpoint,
-    #     'cookies' : request.cookies,
-    #     # 'data' : request.data,
-    #     'args' : request.args,
-    #     'remote_addr' : request.remote_addr,
-    #     'form' : request.form,
-    #     'headers' : dict(request.headers),
-    #     'url': request.url,
-    #     'path' : request.path,
-    #     'environ': dict(request.environ),
-    #     # 'query_string' : request.query_string
-    # })
-    return jsonify(req: dict(request))
+    return jsonify({
+        'origin' : origin,
+        'language' : language,
+        'host' : host,
+        'method' : request.method,
+        'endpoint' : request.endpoint,
+        'cookies' : request.cookies,
+        # 'data' : request.data,
+        'args' : request.args,
+        'remote_addr' : request.remote_addr,
+        'form' : request.form,
+        'headers' : dict(request.headers),
+        'url': request.url,
+        'path' : request.path,
+        'environ': dict(request.environ),
+        # 'query_string' : request.query_string
+    })
 
 if __name__ == '__main__':
     app.run(debug = True, use_reloader = True)
