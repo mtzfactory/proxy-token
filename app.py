@@ -1,12 +1,11 @@
-from flask import Flask, request, Response, jsonify
-from flask_cors import CORS
-from httplib2 import Http
 import urllib.parse
 import base64
 import json
+from flask import Flask, request, Response, jsonify
+from flask_cors import CORS
+from httplib2 import Http
 
 app = Flask(__name__)
-cors = CORS(app)
 
 apiKey = '8eb8889dad5d4a4f8fa4ec40e472cb6d'
 apiSecret = 'ac64eda063e247ee933c6e7e298df0b1'
