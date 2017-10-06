@@ -15,13 +15,13 @@ def getOauthToken(apiKey, apiSecret):
     http_obj = Http()
     auth = apiKey + ':' + apiSecret
     auth64 = base64.b64encode(auth.encode("utf-8"))
-    body = {'grant_type':'client_credentials'}
-    headers = {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8', 'Authorization' : 'Basic ' + auth64}
-    resp, content = http_obj.request(url, method='POST', headers=headers, body=urllib.urlencode(body))
+    body = { 'grant_type':'client_credentials' }
+    headers = { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8', 'Authorization' : 'Basic ' + auth64.decode('utf-8') }
+    resp, content = http_obj.request(url, method = 'POST', headers = headers, body = urllib.urlencode(body))
     return resp, json.loads(content)
 
 @app.route('/')
-def homepage():
+def index():
     host = 'no-set'
     client = 'no-set'
 
