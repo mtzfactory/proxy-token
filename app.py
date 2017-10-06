@@ -13,9 +13,10 @@ def getOauthToken(apiKey, apiSecret):
     url = 'https://accounts.spotify.com/api/token'
     #---
     http_obj = Http()
-    auth = base64.b64encode(apiKey + ':' + apiSecret)
+    auth = apiKey + ':' + apiSecret
+    auth64 = base64.b64encode(auth.encode("utf-8"))
     body = {'grant_type':'client_credentials'}
-    headers = {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8', 'Authorization' : 'Basic ' + auth}
+    headers = {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8', 'Authorization' : 'Basic ' + auth64}
     resp, content = http_obj.request(url, method='POST', headers=headers, body=urllib.urlencode(body))
     return resp, json.loads(content)
 
