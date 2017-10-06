@@ -25,7 +25,6 @@ def getOauthToken(apiKey, apiSecret):
     return resp, json.loads(content)
 
 @app.route('/api/v1/mtzfactory')
-@cross_origin()
 def index():
     host = 'no-set'
     client = 'no-set'
