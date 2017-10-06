@@ -1,5 +1,3 @@
 Flask
 gunicorn
 httplib2
-urllib
-json
