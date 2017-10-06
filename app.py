@@ -6,6 +6,7 @@ from flask_cors import CORS
 from httplib2 import Http
 
 app = Flask(__name__)
+cors = CORS(app, resources = { r"/api/*" : { "origins" : "*" } })
 
 apiKey = '8eb8889dad5d4a4f8fa4ec40e472cb6d'
 apiSecret = 'ac64eda063e247ee933c6e7e298df0b1'
@@ -23,7 +24,7 @@ def getOauthToken(apiKey, apiSecret):
     resp, content = http_obj.request(url, method = 'POST', headers = headers, body = urllib.parse.urlencode(body))
     return resp, json.loads(content)
 
-@app.route('/')
+@app.route('/api/v1/mtzfactory')
 @cross_origin()
 def index():
     host = 'no-set'
