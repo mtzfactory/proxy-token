@@ -1,6 +1,6 @@
 from flask import Flask, request, Response, jsonify
 from httplib2 import Http
-import urllib
+import urllib.parse
 import base64
 import json
 
@@ -17,7 +17,7 @@ def getOauthToken(apiKey, apiSecret):
     auth64 = base64.b64encode(auth.encode("utf-8"))
     body = { 'grant_type':'client_credentials' }
     headers = { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8', 'Authorization' : 'Basic ' + auth64.decode('utf-8') }
-    resp, content = http_obj.request(url, method = 'POST', headers = headers, body = urllib.urlencode(body))
+    resp, content = http_obj.request(url, method = 'POST', headers = headers, body = urllib.parse.urlencode(body))
     return resp, json.loads(content)
 
 @app.route('/')
